@@ -32,11 +32,11 @@ class PaymentController extends Controller
         $Timestamp = Carbon::now()->format('YmdHis');
         $Password = base64_encode($BusinessShortCode . $PassKey . $Timestamp);
         $TransactionType = "CustomerPayBillOnline";
-        $Amount = "1";
+        $Amount = "0";
         $PartyA = "254701838170"; // Hardcoded number
         $PartyB = config('mpesa.shortcode');
         $PhoneNumber = "254701838170";
-        $CallBackURL = config('mpesa.callback_url');
+        $CallBackURL = 'https://82f5-102-216-154-137.ngrok-free.app/payments/STKCallBack'; //config('mpesa.callback_url');
         $AccountReference = "Account Reference Test";
         $TransactionDesc = "Test";
 
